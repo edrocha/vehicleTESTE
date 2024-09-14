@@ -19,12 +19,12 @@ export class VehicleFormComponent implements OnInit {
   ) {
     this.form = this.fb.group({
       id: [null],
-      chassi: ['', Validators.required],
-      marca: ['', Validators.required],
-      modelo: ['', Validators.required],
-      placa: ['', Validators.required],
-      ano: ['', [Validators.required, Validators.pattern('^[0-9]{4}$')]], // Validação para ano de 4 dígitos
-      renavam: ['', Validators.required]
+      chassi: ['', Validators.required, Validators.pattern('/^[A-HJ-NPR-Z0-9]{17}$/')],
+      marca: ['', Validators.required, Validators.minLength(3)],
+      modelo: ['', Validators.required, Validators.minLength(3)],
+      placa: ['', Validators.required, Validators.minLength(8)],
+      ano: ['', [Validators.required, Validators.minLength(4), Validators.pattern('^[0-9]{4}$')]], // Validação para ano de 4 dígitos
+      renavam: ['', Validators.required, Validators.minLength(5)]
     });
     if (this.data != undefined || this.data != null) {
       this.preencheForm(data);

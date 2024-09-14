@@ -6,9 +6,15 @@
   <mat-card-header>
     <mat-card-title>Lista de Veiculos cadastrados</mat-card-title>
   </mat-card-header>
+  <div class="botao">
+  <br>
+  <button mat-button (click)="openForm()">Adicionar Veiculos +</button>
+  <br>
+  <br>
+</div>
+
   <mat-card-content>
     <mat-table [dataSource]="vehicles" class="mat-elevation-z8">
-
       <!-- ID Column -->
       <ng-container matColumnDef="chassi">
         <mat-header-cell *matHeaderCellDef>Chassi</mat-header-cell>
@@ -57,4 +63,4 @@
   </mat-card-content>
 </mat-card>
 <br>
-<button mat-button (click)="openForm()">Adicionar Veiculo</button>
+
