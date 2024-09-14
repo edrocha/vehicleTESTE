@@ -5,8 +5,7 @@ import { VehicleFormComponent } from '../vehicle-form/vehicle-form.component';
 
 @Component({
   selector: 'app-vehicle-list',
-  templateUrl: './vehicle-list.component.html',
-  styleUrls: ['./vehicle-list.component.css']
+  templateUrl: './vehicle-list.component.html'
 })
 export class VehicleListComponent {
   vehicles: any[] = [];
