@@ -4,7 +4,7 @@
     <label for="chassi" class="form-label">Chassi</label>
     <input matInput type="text" class="form-control" id="chassi" formControlName="chassi">
 
-    <div *ngIf="form.get('chassi')?.invalid">
+    <div *ngIf="form.get('chassi')?.invalid && submit">
       <small class="text-danger">Chassi é obrigatório.</small>
     </div>
   </div>
@@ -13,7 +13,7 @@
     <label for="marca" class="form-label">Marca</label>
     <input matInput type="text" class="form-control" id="marca" formControlName="marca">
 
-    <div *ngIf="form.get('marca')?.invalid ">
+    <div *ngIf="form.get('marca')?.invalid && submit">
       <small class="text-danger">Marca é obrigatória.</small>
     </div>
   </div>
@@ -22,7 +22,7 @@
     <label for="modelo" class="form-label">Modelo</label>
     <input matInput type="text" class="form-control" id="modelo" formControlName="modelo">
 
-    <div *ngIf="form.get('modelo')?.invalid">
+    <div *ngIf="form.get('modelo')?.invalid && submit">
       <small class="text-danger">Modelo é obrigatório.</small>
     </div>
   </div>
@@ -30,7 +30,7 @@
   <div>
     <label for="placa" class="form-label">Placa</label>
     <input matInput type="text" class="form-control" id="placa" formControlName="placa">
-    <div *ngIf="form.get('placa')?.invalid">
+    <div *ngIf="form.get('placa')?.invalid && submit">
       <small class="text-danger">Placa é obrigatória.</small>
     </div>
   </div>
@@ -38,7 +38,7 @@
   <div>
     <label for="ano" class="form-label">Ano</label>
     <input matInput type="text" class="form-control" id="ano" formControlName="ano">
-    <div *ngIf="form.get('ano')?.invalid">
+    <div *ngIf="form.get('ano')?.invalid && submit">
       <small class="text-danger">Ano é obrigatório e deve ter 4 dígitos.</small>
     </div>
   </div>
@@ -46,7 +46,7 @@
   <div>
     <label for="renavam" class="form-label">Renavam</label>
     <input matInput type="text" class="form-control" id="renavam" formControlName="renavam">
-    <div *ngIf="form.get('renavam')?.invalid">
+    <div *ngIf="form.get('renavam')?.invalid && submit">
       <small class="text-danger">Renavam é obrigatório.</small>
     </div>
   </div>

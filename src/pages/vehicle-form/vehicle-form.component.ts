@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class VehicleFormComponent implements OnInit {
   form!: FormGroup;
-  desativar: boolean = false;
+  submit: boolean = false;
 
   constructor(public dialogRef: MatDialogRef<VehicleFormComponent>,
     private fb: FormBuilder,
@@ -58,6 +58,7 @@ export class VehicleFormComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.submit = true;
     if (this.form.valid) {
       const vehicleData = this.form.value; // Obtemos os dados do formulário
       if (this.data == undefined) {
