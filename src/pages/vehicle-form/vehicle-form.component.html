@@ -1,0 +1,58 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="princ">
+  <input  type="hidden" class="form-control" id="id" formControlName="id">
+  <div>
+    <label for="chassi" class="form-label">Chassi</label>
+    <input matInput type="text" class="form-control" id="chassi" formControlName="chassi">
+
+    <div *ngIf="form.get('chassi')?.invalid && form.get('chassi')?.touched">
+      <small class="text-danger">Chassi é obrigatório.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="marca" class="form-label">Marca</label>
+    <input type="text" class="form-control" id="marca" formControlName="marca">
+    <div *ngIf="form.get('marca')?.invalid && form.get('marca')?.touched">
+      <small class="text-danger">Marca é obrigatória.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="modelo" class="form-label">Modelo</label>
+    <input type="text" class="form-control" id="modelo" formControlName="modelo">
+    <div *ngIf="form.get('modelo')?.invalid && form.get('modelo')?.touched">
+      <small class="text-danger">Modelo é obrigatório.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="placa" class="form-label">Placa</label>
+    <input type="text" class="form-control" id="placa" formControlName="placa">
+    <div *ngIf="form.get('placa')?.invalid && form.get('placa')?.touched">
+      <small class="text-danger">Placa é obrigatória.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="ano" class="form-label">Ano</label>
+    <input type="text" class="form-control" id="ano" formControlName="ano">
+    <div *ngIf="form.get('ano')?.invalid && form.get('ano')?.touched">
+      <small class="text-danger">Ano é obrigatório e deve ter 4 dígitos.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="renavam" class="form-label">Renavam</label>
+    <input type="text" class="form-control" id="renavam" formControlName="renavam">
+    <div *ngIf="form.get('renavam')?.invalid && form.get('renavam')?.touched">
+      <small class="text-danger">Renavam é obrigatório.</small>
+    </div>
+  </div>
+  <br />
+
+  <div mat-dialog-actions>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Enviar</button>
+    &nbsp;&nbsp;
+    <button type="submit" class="btn btn-danger"  (click)="onClose()">Cancelar</button>
+  </div>
+</form>

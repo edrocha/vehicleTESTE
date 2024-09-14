@@ -1,0 +1,14 @@
+.text-danger {
+  color: red;
+}
+
+.form-control.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+.form-control.ng-valid.ng-touched {
+  border-color: green;
+}
+.princ{
+  padding: 20px 20px 20px 20px;
+}
