@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { VehicleService } from '../../services/vehicle.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LoadingService } from 'src/services/loading.service';
 
 @Component({
   selector: 'app-vehicle-form',
@@ -16,10 +17,16 @@ export class VehicleFormComponent implements OnInit {
     public dialogRef: MatDialogRef<VehicleFormComponent>,
     private fb: FormBuilder,
     private vehicleService: VehicleService,
+    public loadingService: LoadingService,
     @Inject(MAT_DIALOG_DATA) public data: any
+
   ) {}
 
+
+
+
   ngOnInit(): void {
+    this.activeLoading()
     this.initializeForm();
 
     if (this.data) {
@@ -42,11 +49,9 @@ export class VehicleFormComponent implements OnInit {
   addForm(vehicleData: any) {
     this.vehicleService.addVehicle(vehicleData).subscribe({
       next: (response) => {
-        alert('Veículo adicionado com sucesso');
         this.dialogRef.close(response); // Fecha o diálogo e retorna a resposta
       },
       error: (error) => {
-        alert('Erro ao adicionar veículo: ' + error.message);
       }
     });
   }
@@ -64,6 +69,7 @@ export class VehicleFormComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.activeLoading()
     this.submit = true;
     if (this.form.valid) {
       const vehicleData = this.form.value; // Obtemos os dados do formulário
@@ -81,5 +87,12 @@ export class VehicleFormComponent implements OnInit {
 
   preencheForm(data: any) {
     this.form.patchValue(data); // Atualiza os valores do formulário existente
+  }
+  activeLoading(){
+     // Simule uma chamada para carregar dados
+     this.loadingService.show();
+     setTimeout(() => {
+       this.loadingService.hide();
+     }, 2000); // Simule um atraso de 2 segundos
   }
 }

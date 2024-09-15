@@ -16,14 +16,18 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule } from '@angular/forms'; // Se você estiver usando ngModel
+import { FormsModule } from '@angular/forms';
+import { LoadingComponent } from '../components/loading/loading.component';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     VehicleListComponent,
-    VehicleFormComponent
+    VehicleFormComponent,
+    LoadingComponent
 
       ],
   imports: [
