@@ -26,7 +26,7 @@ export class VehicleFormComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.activeLoading()
+    //this.activeLoading()
     this.initializeForm();
 
     if (this.data) {
@@ -59,7 +59,6 @@ export class VehicleFormComponent implements OnInit {
   editForm(vehicleData: any) {
     this.vehicleService.updateVehicle(vehicleData).subscribe({
       next: (response) => {
-        alert('Veículo editado com sucesso');
         this.dialogRef.close(response); // Fecha o diálogo e retorna a resposta
       },
       error: (error) => {
@@ -89,10 +88,12 @@ export class VehicleFormComponent implements OnInit {
     this.form.patchValue(data); // Atualiza os valores do formulário existente
   }
   activeLoading(){
-     // Simule uma chamada para carregar dados
-     this.loadingService.show();
-     setTimeout(() => {
-       this.loadingService.hide();
-     }, 2000); // Simule um atraso de 2 segundos
+        // Simule uma chamada para carregar dados
+        this.loadingService.show();
+        setTimeout(() => {
+          this.loadingService.hide();
+        }, 2000); // Simule um atraso de 2 segundos
+      }
   }
-}
+
+
