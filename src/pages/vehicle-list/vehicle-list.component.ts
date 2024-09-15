@@ -61,5 +61,16 @@ export class VehicleListComponent {
       this.loadingService.hide();
     }, 2000); // Simule um atraso de 2 segundos
   }
+  openDialogDelete(id: any) {
+    var x;
+    var r = confirm("Deseja Apagar?");
+    if (r == true) {
+      this.deleteVehicle(id);
+    }
+    else {
+
+    }
+
+  }
 
 }

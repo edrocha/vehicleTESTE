@@ -7,7 +7,7 @@
   <mat-card-header>
     <mat-card-title>Lista de Veiculos cadastrados</mat-card-title>
   </mat-card-header>
-  <div class="botao">
+  <div class="button">
   <br>
   <button class="btn btn-primary" (click)="openForm()">Adicionar Veiculos +</button>
   <br>
@@ -53,8 +53,12 @@
       <ng-container matColumnDef="Ações">
         <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
         <mat-cell *matCellDef="let element">
-          <button mat-button (click)="editVehicle(element)">Editar</button>
-          <button mat-button color="warn" (click)="deleteVehicle(element.id)">Deletar</button>
+          <button mat-button color="warn" class="allbutton" (click)="editVehicle(element)">
+            <img src="../../assets/editar.png" height="30">
+          </button>
+          <button mat-button color="warn"  class="allbutton" (click)="openDialogDelete(element.id)">
+            <img src="../../assets/delete.png" height="30">
+          </button>
         </mat-cell>
       </ng-container>
 
