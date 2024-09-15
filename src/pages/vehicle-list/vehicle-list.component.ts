@@ -10,7 +10,7 @@ import { VehicleFormComponent } from '../vehicle-form/vehicle-form.component';
 })
 export class VehicleListComponent {
   vehicles: any[] = [];
-  displayedColumns: string[] = ['chassi', 'marca', 'modelo', 'placa', 'ano', 'renavam', 'actions'];
+  displayedColumns: string[] = ['chassi', 'marca', 'modelo', 'placa', 'ano', 'renavam', 'Ações'];
 
   constructor(private vehicleService: VehicleService, private dialog: MatDialog) { }
 

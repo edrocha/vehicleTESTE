@@ -12,26 +12,31 @@ export class VehicleFormComponent implements OnInit {
   form!: FormGroup;
   submit: boolean = false;
 
-  constructor(public dialogRef: MatDialogRef<VehicleFormComponent>,
+  constructor(
+    public dialogRef: MatDialogRef<VehicleFormComponent>,
     private fb: FormBuilder,
     private vehicleService: VehicleService,
-    @Inject(MAT_DIALOG_DATA) public data: any,
-  ) {
-    this.form = this.fb.group({
-      id: [null],
-      chassi: ['', Validators.required, Validators.pattern('/^[A-HJ-NPR-Z0-9]{17}$/')],
-      marca: ['', Validators.required, Validators.minLength(3)],
-      modelo: ['', Validators.required, Validators.minLength(3)],
-      placa: ['', Validators.required, Validators.minLength(8)],
-      ano: ['', [Validators.required, Validators.minLength(4), Validators.pattern('^[0-9]{4}$')]], // Validação para ano de 4 dígitos
-      renavam: ['', Validators.required, Validators.minLength(5)]
-    });
-    if (this.data != undefined || this.data != null) {
-      this.preencheForm(data);
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {}
+
+  ngOnInit(): void {
+    this.initializeForm();
+
+    if (this.data) {
+      this.preencheForm(this.data);
     }
   }
-  ngOnInit(): void {
 
+  private initializeForm() {
+    this.form = this.fb.group({
+      id: [null],
+      chassi: ['', [Validators.required, Validators.minLength(17)]], // Adicionando validador personalizado
+      marca: ['', [Validators.required, Validators.minLength(3)]],
+      modelo: ['', [Validators.required, Validators.minLength(3)]],
+      placa: ['', [Validators.required, Validators.minLength(8)]],
+      ano: ['', [Validators.required, Validators.pattern('^[0-9]{4}$')]], // Validação para ano de 4 dígitos
+      renavam: ['', [Validators.required, Validators.minLength(5)]]
+    });
   }
 
   addForm(vehicleData: any) {
@@ -41,10 +46,11 @@ export class VehicleFormComponent implements OnInit {
         this.dialogRef.close(response); // Fecha o diálogo e retorna a resposta
       },
       error: (error) => {
-        alert('Erro ao adicionar veículo:');
+        alert('Erro ao adicionar veículo: ' + error.message);
       }
     });
   }
+
   editForm(vehicleData: any) {
     this.vehicleService.updateVehicle(vehicleData).subscribe({
       next: (response) => {
@@ -52,7 +58,7 @@ export class VehicleFormComponent implements OnInit {
         this.dialogRef.close(response); // Fecha o diálogo e retorna a resposta
       },
       error: (error) => {
-        alert('Erro ao editar veículo:');
+        alert('Erro ao editar veículo: ' + error.message);
       }
     });
   }
@@ -61,14 +67,11 @@ export class VehicleFormComponent implements OnInit {
     this.submit = true;
     if (this.form.valid) {
       const vehicleData = this.form.value; // Obtemos os dados do formulário
-      if (this.data == undefined) {
-        this.addForm(vehicleData)
+      if (!this.data) {
+        this.addForm(vehicleData);
       } else {
-        this.editForm(vehicleData)
+        this.editForm(vehicleData);
       }
-
-
-
     }
   }
 
@@ -77,15 +80,6 @@ export class VehicleFormComponent implements OnInit {
   }
 
   preencheForm(data: any) {
-    this.form = this.fb.group({
-      id: [data.id],
-      chassi: [data.chassi],
-      marca: [data.marca],
-      modelo: [data.modelo],
-      placa: [data.placa],
-      ano: [data.ano],
-      renavam: [data.renavam]
-    })
+    this.form.patchValue(data); // Atualiza os valores do formulário existente
   }
 }
-
