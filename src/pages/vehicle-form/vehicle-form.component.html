@@ -1,53 +1,54 @@
+<app-loading *ngIf="loadingService.loading$ | async"></app-loading>
 <form [formGroup]="form" (ngSubmit)="onSubmit()" class="princ">
   <input  type="hidden" class="form-control" id="id" formControlName="id">
   <div>
-    <label for="chassi" class="form-label">Chassi</label>
-    <input matInput type="text" class="form-control" id="chassi" formControlName="chassi">
+    <label for="chassi" class="form-label">Chassi*</label>
+    <input matInput type="text" class="form-control" id="chassi" formControlName="chassi" placeholder="17 caracteres min">
 
     <div *ngIf="form.get('chassi')?.invalid && submit">
-      <small class="text-danger">Chassi é obrigatório.</small>
+      <small class="text-danger">Chassi é obrigatório. Possui 17 caracteres </small>
     </div>
   </div>
 
   <div>
-    <label for="marca" class="form-label">Marca</label>
-    <input matInput type="text" class="form-control" id="marca" formControlName="marca">
+    <label for="marca" class="form-label">Marca*</label>
+    <input matInput type="text" class="form-control" id="marca" formControlName="marca" placeholder="3 caracteres min">
 
     <div *ngIf="form.get('marca')?.invalid && submit">
-      <small class="text-danger">Marca é obrigatória.</small>
+      <small class="text-danger">Marca é obrigatória. Possui min 3 caracteres</small>
     </div>
   </div>
 
   <div>
-    <label for="modelo" class="form-label">Modelo</label>
-    <input matInput type="text" class="form-control" id="modelo" formControlName="modelo">
+    <label for="modelo" class="form-label">Modelo*</label>
+    <input matInput type="text" class="form-control" id="modelo" formControlName="modelo" placeholder="3 caracteres min">
 
     <div *ngIf="form.get('modelo')?.invalid && submit">
-      <small class="text-danger">Modelo é obrigatório.</small>
+      <small class="text-danger">Modelo é obrigatório. Possui min 3 caracteres</small>
     </div>
   </div>
 
   <div>
-    <label for="placa" class="form-label">Placa</label>
-    <input matInput type="text" class="form-control" id="placa" formControlName="placa">
+    <label for="placa" class="form-label">Placa*</label>
+    <input matInput type="text" class="form-control" id="placa" formControlName="placa" placeholder="8 caracteres min">
     <div *ngIf="form.get('placa')?.invalid && submit">
-      <small class="text-danger">Placa é obrigatória.</small>
+      <small class="text-danger">Placa é obrigatória. Possui min 8 caracteres</small>
     </div>
   </div>
 
   <div>
-    <label for="ano" class="form-label">Ano</label>
-    <input matInput type="text" class="form-control" id="ano" formControlName="ano">
+    <label for="ano" class="form-label">Ano*</label>
+    <input matInput type="text" class="form-control" id="ano" formControlName="ano" placeholder="4 caracteres min">
     <div *ngIf="form.get('ano')?.invalid && submit">
       <small class="text-danger">Ano é obrigatório e deve ter 4 dígitos.</small>
     </div>
   </div>
 
   <div>
-    <label for="renavam" class="form-label">Renavam</label>
-    <input matInput type="text" class="form-control" id="renavam" formControlName="renavam">
+    <label for="renavam" class="form-label">Renavam*</label>
+    <input matInput type="text" class="form-control" id="renavam" formControlName="renavam" placeholder="11 caracteres min">
     <div *ngIf="form.get('renavam')?.invalid && submit">
-      <small class="text-danger">Renavam é obrigatório.</small>
+      <small class="text-danger">Renavam é obrigatório. 11 caracteres min</small>
     </div>
   </div>
   <br />
@@ -58,3 +59,4 @@
     <button type="submit" class="btn btn-danger"  (click)="onClose()">Cancelar</button>
   </div>
 </form>
+
