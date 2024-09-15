@@ -1,27 +1,33 @@
-# Vehicle
+ Teste de Edison barbosa da Rocha 
+ Cel 11 91322-7557 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+# Algumas Observações importantes
+ Sistema feito em Angular 18 e Node 20 com teste unitarios seguindo a solicitação do teste 
+ GIT backend   https://github.com/edrocha/vehicles.api 
+ GIT Front https://github.com/edrocha/vehicleTESTE
+ Url para testar diretamente sem precisar instalar 
+ https://testes.edsonrocha.com.br/
+
+# Vehicle
+Este projeto foi gerado com angular 16 e Node 20
 
 ## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng serve` para rodar localmente na porta  `http://localhost:4200/`.
 
 ## Build
+Run `ng build` para gerar a pasta `dist/` com o processo final.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Componentes
+ Foi utilizado o material com base de componentes
 
-## Running unit tests
+## Observações Importantes 
+ O Back-end ficou separado do servidor de front 
+ No front eu coloquei na locaweb servidor pessoal 
+ No back eu coloquei no render pois é um servidor especifico para rodar NodeJS
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
