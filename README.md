@@ -1,26 +1,22 @@
-Vehicles-Api
-Uma api de vehicles com NodeJs
+# Vehicle
 
-rodar o script de database em scripts o arquivo db.sql
+# Algumas Observações importantes
 
-## Scripts Disponivéis
+Sistema feito em Angular 18 e Node 20 com teste unitarios seguindo a solicitação do teste.<br>
+BackEnd - https://github.com/edrocha/vehicles.api<br>
+Url para testar diretamente sem precisar instalar:
+https://testes.edsonrocha.com.br/
 
-No diretório do Projeto rodar os seguintes scripts:
+## Servidor de Desenvolvimento
 
-### yarn ou npm install
+Rode ng serve para rodar localmente na porta http://localhost:4200/.
 
-Para Instalar as dependências
+## Build
 
-### yarn dev ou npm run dev
+Rode ng build para gerar a pasta dist/ com o processo final.
 
-Para rodar a aplicação
+## Componentes
 
-### yarn build ou npm run build
+Foi utilizado o material como base dos componentes
 
-Para buildar a aplicação
-
-
-### Front End
-para rodar o front end vá no link: https://github.com/edrocha/vehicleTESTE.git
-
-- *Autor:* [Edson Rocha](https://www.linkedin.com/in/edson-rocha-77539265)
+- Autor: [Edson Rocha](https://www.linkedin.com/in/edson-rocha-77539265)
