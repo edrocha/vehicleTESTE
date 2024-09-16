@@ -1,33 +1,26 @@
- Teste de Edison barbosa da Rocha 
- Cel 11 91322-7557 
+Vehicles-Api
+Uma api de vehicles com NodeJs
 
-# Algumas Observações importantes
- Sistema feito em Angular 18 e Node 20 com teste unitarios seguindo a solicitação do teste 
- GIT backend   https://github.com/edrocha/vehicles.api 
- GIT Front https://github.com/edrocha/vehicleTESTE
- Url para testar diretamente sem precisar instalar 
- https://testes.edsonrocha.com.br/
+rodar o script de database em scripts o arquivo db.sql
 
-# Vehicle
-Este projeto foi gerado com angular 16 e Node 20
+## Scripts Disponivéis
 
-## Development server
-Run `ng serve` para rodar localmente na porta  `http://localhost:4200/`.
+No diretório do Projeto rodar os seguintes scripts:
 
-## Build
-Run `ng build` para gerar a pasta `dist/` com o processo final.
+### yarn ou npm install
 
-## Componentes
- Foi utilizado o material com base de componentes
+Para Instalar as dependências
 
-## Observações Importantes 
- O Back-end ficou separado do servidor de front 
- No front eu coloquei na locaweb servidor pessoal 
- No back eu coloquei no render pois é um servidor especifico para rodar NodeJS
+### yarn dev ou npm run dev
+
+Para rodar a aplicação
+
+### yarn build ou npm run build
+
+Para buildar a aplicação
 
 
+### Front End
+para rodar o front end vá no link: https://github.com/edrocha/vehicleTESTE.git
 
-
-
-
-
+- *Autor:* [Edson Rocha](https://www.linkedin.com/in/edson-rocha-77539265)
